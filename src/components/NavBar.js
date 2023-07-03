@@ -1,22 +1,32 @@
 import { Link } from "react-router-dom";
-//import React from 'react';
 
+function NavBar({ currentUser }) {
+  const handleLogout = () => {
+    
+    console.log("Logout action triggered");
+  };
 
-function NavBar () {
-
-        return (
-          <nav>
-            <Link to="/">
-              <button>Home</button>
-            </Link>
+  return (
+    <nav>
+      <Link to="/">
+        <button>Home</button>
+      </Link>
       
-            <Link to="/games">
-              <button>Games</button>
-            </Link>
-          </nav>
-        );
-      }
-      
-      export default NavBar;
+        <Link to="/logout" onClick={handleLogout}>
+          Log out
+        </Link>
 
+        <>
+          <Link to="/signup">Sign up</Link>
+          <Link to="/login">Log in</Link>
+        </>
+
+      <Link to="/games">
+        <button>Games</button>
+      </Link>
+    </nav>
+  );
+}
+
+export default NavBar;
 
