@@ -6,18 +6,31 @@ function NavBar({ currentUser }) {
     console.log("Logout action triggered");
   };
 
-        return (
-          <nav>
-            <Link to="/">
-              <button>Home</button>
-            </Link>
+  return (
+    <nav>
+      <Link to="/">
+        <button>Home</button>
+      </Link>
       
-            <Link to="/games">
-              <button>Games</button>
+        <Link to="/logout" onClick={handleLogout}>
+          Log out
+        </Link>
+
+        <>
+          <Link to="/signup">Sign up</Link>
+          <Link to="/login">Log in</Link>
+        </>
+
+      <Link to="/games">
+        <button>Games</button>
+      </Link>
+
+      <Link to="/games/create">
+              <button>Add Game</button>
             </Link>
-          </nav>
-        );
-      }
-      
-      export default NavBar;
+    </nav>
+  );
+}
+
+export default NavBar;
 
