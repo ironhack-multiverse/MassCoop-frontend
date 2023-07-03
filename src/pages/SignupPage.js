@@ -32,7 +32,7 @@ function SignupPage(props) {
     const requestBody = { email, password, name, birth, preferences };
 
     if (!preferences || !email) {
-       const error = {};
+      const error = {};
       if (!email) {
         error.email = "Email is required";
       }
@@ -44,7 +44,6 @@ function SignupPage(props) {
       return;
     }
 
-   
     axios
       .post(`${API_URL}/auth/signup`, requestBody)
       .then((response) => {
@@ -52,7 +51,7 @@ function SignupPage(props) {
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;
-        setErrorMessage({general: errorDescription});
+        setErrorMessage({ general: errorDescription });
       });
   };
 
@@ -61,34 +60,37 @@ function SignupPage(props) {
       <h1>Sign Up</h1>
 
       <form onSubmit={handleSignupSubmit}>
-       
-        <label>Email* : {" "}
-        <input type="email" name="email" value={email} onChange={handleEmail} />
-        {errorMessage.email && <p> {errorMessage.email} </p>}
+        <label>
+          Email* :{" "}
+          <input
+            type="email"
+            name="email"
+            value={email}
+            onChange={handleEmail}
+          />
+          {errorMessage.email && <p> {errorMessage.email} </p>}
         </label>
-        <label>Password* :{" "}</label>
+        <label>Password* : </label>
         <input
           type="password"
           name="password"
           value={password}
           onChange={handlePassword}
-          />
-        <label>Name* : {" "}
-        <input type="text" name="name" value={name} onChange={handleName} />
+        />
+        <label>
+          Name* :{" "}
+          <input type="text" name="name" value={name} onChange={handleName} />
         </label>
         <label>Birth:</label>
         <input type="date" name="date" value={birth} onChange={handleBirth} />
-        {/*  <label>Preferences:</label>
-        <input type="text" name="preferences" value={preferences} onChange={handlePreferences} />
-    */}
-        <form>
+      
           <label>
             Preferences:
             <select
               name="preferences"
               value={preferences}
               onChange={handlePreferences}
-              >
+            >
               <option value="">Select an option </option>
               <option value="Online games">Online games</option>
               <option value="Local/offline games">Local/offline games</option>
@@ -96,14 +98,15 @@ function SignupPage(props) {
                 Both online and local
               </option>
             </select>
-                {errorMessage.preferences && <p> {errorMessage.preferences} </p>}
+            {errorMessage.preferences && <p> {errorMessage.preferences} </p>}
           </label>
-        </form>
         <p> All * fields are required</p>
         <button type="submit">Sign Up</button>
       </form>
 
-      {errorMessage.general && <p className="error-message">{errorMessage.general}</p>}
+      {errorMessage.general && (
+        <p className="error-message">{errorMessage.general}</p>
+      )}
 
       <p>Already have account?</p>
       <Link to={"/login"}> Login</Link>
