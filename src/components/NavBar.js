@@ -13,6 +13,10 @@ function NavBar () {
             <Link to="/games">
               <button>Games</button>
             </Link>
+
+            <Link to="/games/create">
+              <button>Add Game</button>
+            </Link>
           </nav>
         );
       }

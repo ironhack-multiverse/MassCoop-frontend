@@ -89,7 +89,6 @@ function SignupPage(props) {
               value={preferences}
               onChange={handlePreferences}
               >
-              games
               <option value="">Select an option </option>
               <option value="Online games">Online games</option>
               <option value="Local/offline games">Local/offline games</option>
