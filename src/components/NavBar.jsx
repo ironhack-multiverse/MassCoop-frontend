@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+/* import { Link } from "react-router-dom";
 import React from 'react';
 
 function NavBar () {
@@ -19,3 +19,4 @@ function NavBar () {
       export default NavBar;
 
 
+ */
