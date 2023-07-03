@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
-//import React from 'react';
 
-
-function NavBar () {
+function NavBar({ currentUser }) {
+  const handleLogout = () => {
+    
+    console.log("Logout action triggered");
+  };
 
         return (
           <nav>
@@ -13,14 +15,9 @@ function NavBar () {
             <Link to="/games">
               <button>Games</button>
             </Link>
-
-            <Link to="/games/create">
-              <button>Add Game</button>
-            </Link>
           </nav>
         );
       }
       
       export default NavBar;
-
 
