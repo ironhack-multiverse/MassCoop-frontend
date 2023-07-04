@@ -4,12 +4,9 @@ function HomePage() {
     return (
       <div>
         <h1>Home Page</h1>
+<button>Local games</button>
+<button>Online games</button>
 
-
-
--navbar (login,register)
--two buttons with two categories
-- list of all Game
 
 
 
