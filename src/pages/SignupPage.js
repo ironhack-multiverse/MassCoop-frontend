@@ -45,11 +45,12 @@ function SignupPage(props) {
     }
 
     axios
-      .post(`${API_URL}/auth/signup`, requestBody)
+      .post(`${process.env.REACT_APP_SERVER_URL || API_URL}/auth/signup`, requestBody)
       .then((response) => {
         navigate("/login");
       })
       .catch((error) => {
+        console.log(error)
         const errorDescription = error.response.data.message;
         setErrorMessage({ general: errorDescription });
       });

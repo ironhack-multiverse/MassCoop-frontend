@@ -37,7 +37,7 @@ function AddGame(props) {
 
     //const storedToken = localStorage.getItem("authToken");
     axios
-      .post(`${API_URL}/api/games`, requestBody, {
+      .post(`${process.env.REACT_APP_SERVER_URL || API_URL}/api/games`, requestBody, {
       })
       .then((response) => {
         setName("");
