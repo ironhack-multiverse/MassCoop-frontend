@@ -26,7 +26,6 @@ function AddGame(props) {
             name,
             summary,
           },
-      summary,
       campaigncoop,
       offlinecoop,
       onlinecoop,
