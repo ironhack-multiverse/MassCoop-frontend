@@ -11,7 +11,6 @@ function AddGame(props) {
   const [onlinecoop, setOnlinecoop] = useState("");
   const [onlinemax, setOnlinemax] = useState(0);
   
-  
   const handleName = (e) => setName(e.target.value);
   const handleSummary = (e) => setSummary(e.target.value);
   const handleCampaigncoop = (e) => setCampaigncoop (e.target.value);
@@ -36,7 +35,7 @@ function AddGame(props) {
 
     //const storedToken = localStorage.getItem("authToken");
     axios
-      .post(`${API_URL}/api/games`, requestBody, {
+      .post(`${process.env.REACT_APP_SERVER_URL || API_URL}/api/games`, requestBody, {
       })
       .then((response) => {
         setName("");
@@ -45,7 +44,7 @@ function AddGame(props) {
         setOfflinecoop("");
         setOnlinecoop("");
         setOnlinemax(0);
-        props.refreshGames();
+        // props.refreshGames();
       })
       .catch((error) => console.log(error));
   };
