@@ -18,6 +18,8 @@ function AddGame(props) {
   const handleOnlinecoop = (e) => setOnlinecoop(e.target.value);
   const handleOnlinemax = (e) => setOnlinemax(e.target.value);
 
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const requestBody = {
@@ -25,7 +27,6 @@ function AddGame(props) {
             name,
             summary,
           },
-      summary,
       campaigncoop,
       offlinecoop,
       onlinecoop,
