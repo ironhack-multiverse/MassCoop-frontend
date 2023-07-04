@@ -37,10 +37,10 @@ function AddReview(props) {
     <div className="AddReview">
       <h3>Add Review : </h3> {" "}
       <form onSubmit={handleSubmit}>
-        <label>Review</label> {" "}
+        <label>Review </label> {" "}
         <textarea type="text" name="comment" value={comment} onChange={handleComment} />
         <br />
-        <label>Rating</label> {" "}
+        <label>Rating </label> {" "}
         <input type="number" name="rating" value={rating} onChange={handleRating} />
         <button type="submit">Submit</button>
       </form>
