@@ -20,7 +20,7 @@ function HomePage() {
       .get(`${process.env.REACT_APP_SERVER_URL || API_URL}/api/games`)
       .then((response) => {
         setGames(response.data);
-        // setFilteredGames(response.data);
+      setFilteredGames(response.data);
       })
       .catch((error) => console.log(error));
   };
@@ -43,19 +43,26 @@ function HomePage() {
   };
 
   const handleGenerateRandomGame = () => {
-    const randomIndex = Math.floor(Math.random() * filteredGames.length);
-    const randomGame = filteredGames[randomIndex];
-    setRandomGame(randomGame);
+    if (filteredGames.length > 0) {
+      const randomIndex = Math.floor(Math.random() * filteredGames.length);
+      const randomGame = filteredGames[randomIndex];
+      setRandomGame(randomGame);
+    } else if (games.length > 0) {
+      const randomIndex = Math.floor(Math.random() * games.length);
+      const randomGame = games[randomIndex];
+      setRandomGame(randomGame);
+    }
   };
 
   return (
     <div>
       <h1>Home Page</h1>
+      <div className="button-group">
 
-      <button onClick={() => handleFilterClick("local")}>Local games</button>
-      <button onClick={() => handleFilterClick("online")}>Online games</button>
-      <button onClick={handleGenerateRandomGame}>Generate Random Game</button>
-
+      <button className="btn btn-primary" onClick={() => handleFilterClick("local")}>Local games</button>
+      <button className="btn btn-primary" onClick={() => handleFilterClick("online")}>Online games</button>
+      <button className="btn btn-primary" onClick={handleGenerateRandomGame}>Generate Random Game</button>
+</div>
       {/* {randomGame ? renderRandom() : renderList()} */}
       {randomGame ? (
         <div>
