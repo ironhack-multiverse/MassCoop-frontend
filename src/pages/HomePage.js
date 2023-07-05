@@ -66,8 +66,8 @@ function HomePage() {
       {randomGame ? (
         <div>
           <h2>Randomly Generated Game</h2>
-          <p>Name: {randomGame.name}</p>
-          <p>Summary: {randomGame.summary}</p>
+          <p>Name: {randomGame.game.name}</p>
+          <p>Summary: {randomGame.game.summary}</p>
         </div>
       ) : (
         <ul>
