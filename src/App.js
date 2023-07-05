@@ -8,6 +8,8 @@ import SignupPage from './pages/SignupPage';
 import AddGame from './components/AddGame';
 import Games from './components/DisplayGamesPage';
 import GamesDetailsPage from './pages/GameDetailsPage';
+import ReviewCard from './components/ReviewCard';
+import EditReviewPage from './pages/EditReviewPage';
 
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
   <Route path="/signup" element={<SignupPage /> } />
   <Route path="/games" element={<Games /> } />
   <Route path="/games/create" element={<AddGame /> } />
+  <Route path="/reviews/edit/:reviewId" element={<EditReviewPage /> } />
   <Route path="/games/:gameId" element={<GamesDetailsPage /> } />
   </Routes>
 

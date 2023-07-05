@@ -1,15 +1,19 @@
 import { useState } from "react";
 import axios from "axios";
+//import gamesService from "../services/games.services";
+import { useNavigate } from "react-router-dom";
 
 const API_URL = "http://localhost:5005";
 
 function AddGame(props) {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [summary, setSummary] = useState("");
   const [campaigncoop, setCampaigncoop] = useState(false);
   const [offlinecoop, setOfflinecoop] = useState(false);
   const [onlinecoop, setOnlinecoop] = useState(false);
   const [onlinemax, setOnlinemax] = useState("");
+  const [offlinemax, setOfflinemax] = useState("");
 
   const handleName = (e) => setName(e.target.value);
   const handleSummary = (e) => setSummary(e.target.value);
@@ -17,7 +21,8 @@ function AddGame(props) {
   const handleOfflinecoop = (e) => setOfflinecoop(e.target.checked);
   const handleOnlinecoop = (e) => setOnlinecoop(e.target.checked);
   const handleOnlinemax = (e) => setOnlinemax(e.target.value);
-
+  const handleOfflinemax = (e) => setOfflinemax(e.target.value);
+  
 
 
   const handleSubmit = (e) => {
@@ -31,18 +36,19 @@ function AddGame(props) {
       offlinecoop,
       onlinecoop,
       onlinemax: Number(onlinemax),
+      offlinemax: Number(offlinemax),
     };
 
     console.log(requestBody);
     // return
 
     //const storedToken = localStorage.getItem("authToken");
-    axios
+      axios
       .post(
         `${process.env.REACT_APP_SERVER_URL || API_URL}/api/games`,
         requestBody,
         {}
-      )
+      ) 
       .then((response) => {
         setName("");
         setSummary("");
@@ -50,7 +56,9 @@ function AddGame(props) {
         setOfflinecoop(false);
         setOnlinecoop(false);
         setOnlinemax(0);
-        // props.refreshGames();
+        setOfflinemax(0);
+        const gameId = response.data._id;
+        navigate(`/games/${gameId}`);
       })
       .catch((error) => console.log(error));
   };
@@ -98,12 +106,20 @@ function AddGame(props) {
         />
 
         <br />
-        <label>Numbers maximum of players : </label>
+        <label>Numbers maximum of online players : </label>
         <input
           type="number"
           name="onlinemax"
           value={onlinemax}
           onChange={handleOnlinemax}
+        ></input>
+        <br />
+        <label>Numbers maximum of offline players : </label>
+        <input
+          type="number"
+          name="offlinemax"
+          value={offlinemax}
+          onChange={handleOfflinemax}
         ></input>
         <br />
         <button type="submit">Submit</button>
