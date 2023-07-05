@@ -29,7 +29,7 @@ function AddReview(props) {
       .then((response) => {
         setComment([]);
         setRating(0);
-       // props.refreshGames();
+       props.refreshGame();
       })
       .catch((error) => console.log(error));
   };
