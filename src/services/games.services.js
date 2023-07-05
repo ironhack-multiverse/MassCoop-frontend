@@ -36,6 +36,6 @@ class GamesService {
 
 }
 
-const gamesService = new gamesService();
+const gamesService = new GamesService();
 
 export default gamesService;

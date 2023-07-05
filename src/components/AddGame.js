@@ -13,6 +13,7 @@ function AddGame(props) {
   const [offlinecoop, setOfflinecoop] = useState(false);
   const [onlinecoop, setOnlinecoop] = useState(false);
   const [onlinemax, setOnlinemax] = useState("");
+  const [offlinemax, setOfflinemax] = useState("");
 
   const handleName = (e) => setName(e.target.value);
   const handleSummary = (e) => setSummary(e.target.value);
@@ -20,6 +21,7 @@ function AddGame(props) {
   const handleOfflinecoop = (e) => setOfflinecoop(e.target.checked);
   const handleOnlinecoop = (e) => setOnlinecoop(e.target.checked);
   const handleOnlinemax = (e) => setOnlinemax(e.target.value);
+  const handleOfflinemax = (e) => setOfflinemax(e.target.value);
   
 
 
@@ -34,6 +36,7 @@ function AddGame(props) {
       offlinecoop,
       onlinecoop,
       onlinemax: Number(onlinemax),
+      offlinemax: Number(offlinemax),
     };
 
     console.log(requestBody);
@@ -53,6 +56,7 @@ function AddGame(props) {
         setOfflinecoop(false);
         setOnlinecoop(false);
         setOnlinemax(0);
+        setOfflinemax(0);
         const gameId = response.data._id;
         navigate(`/games/${gameId}`);
       })
@@ -102,12 +106,20 @@ function AddGame(props) {
         />
 
         <br />
-        <label>Numbers maximum of players : </label>
+        <label>Numbers maximum of online players : </label>
         <input
           type="number"
           name="onlinemax"
           value={onlinemax}
           onChange={handleOnlinemax}
+        ></input>
+        <br />
+        <label>Numbers maximum of offline players : </label>
+        <input
+          type="number"
+          name="offlinemax"
+          value={offlinemax}
+          onChange={handleOfflinemax}
         ></input>
         <br />
         <button type="submit">Submit</button>

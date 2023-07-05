@@ -36,7 +36,9 @@ function GamesDetailsPage(props) {
       <br />
       {game && (
         <>
-          <img src={game.game.cover.url} alt="cover" />
+          {game.game && game.game.cover && game.game.cover.url && (
+            <img src={game.game.cover.url} alt="cover" />
+          )}
 
           <h1>Game name: {game.game.name}</h1>
           <p>Summary :{game.game.summary}</p>
@@ -58,7 +60,7 @@ function GamesDetailsPage(props) {
           <p>{game.rating}</p>
         </>
       )}
-      <ReviewCard refreshGame={getGame} reviews={game?.reviews}/>
+      <ReviewCard refreshGame={getGame} reviews={game?.reviews} />
       <AddReview refreshGame={getGame} gameId={gameId} />
       <Link to="/games">
         <button>Back to games</button>
