@@ -4,6 +4,7 @@ import AddReview from "../components/AddReview";
 import DisplayReviews from "../components/DisplayReviews";
 //import gamesService from "../services/games.services";
 import axios from "axios";
+import ReviewCard from "../components/ReviewCard";
 const API_URL = "http://localhost:5005";
 
 
@@ -37,18 +38,19 @@ console.log(game)
     <div className="GameDetails">
       {game && (
         <>
-       <h1>   Game name: {game.game.name}</h1>
+       <h1>  Game name: {game.game.name}</h1>
           <p>Summary :{game.game.summary}</p>
-          <p>Playable coop campaign : {game.campaigncoop}</p>
-          <p>Local multiplayer mode : {game.offlinecoop}</p>
-          <p>Online multiplayer mode : {game.onlinecoop}</p>
-          <p>Maximum players : {game.onlinemax}</p>
+          <p>Playable coop campaign : { game.campaigncoop ? "available": "unavailable"}</p>
+          <p>Local coop multiplayer mode : {game.offlinecoop ? "available": "unavailable"}</p>
+          <p>Online multiplayer mode : {game.onlinecoop ? "available": "unavailable"}</p>
+          <p>Maximum online players : {game.onlinemax || 0}</p>
+          <p>Maximum offline players : {game.offlinemax || 0}</p>
           <p>{game.review}</p> 
           <p>{game.rating}</p>
         </>
       )}
 
- <DisplayReviews />   
+ <ReviewCard />   
      <AddReview refreshGame={getGame} gameId={gameId} />    
 
       <Link to="/games">
