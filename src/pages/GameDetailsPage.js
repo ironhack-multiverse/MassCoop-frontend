@@ -35,18 +35,18 @@ console.log(game)
   
   return (
     <div className="GameDetails">
-      {game && (
-        <>
-       <h1>   Game name: {game.game.name}</h1>
-          <p>Summary :{game.game.summary}</p>
-          <p>Playable coop campaign : {game.campaigncoop}</p>
-          <p>Local multiplayer mode : {game.offlinecoop}</p>
-          <p>Online multiplayer mode : {game.onlinecoop}</p>
-          <p>Maximum players : {game.onlinemax}</p>
-          <p>{game.review}</p> 
-          <p>{game.rating}</p>
-        </>
-      )}
+    {game && (
+      <>
+        <h1>Game name: {game.game.name}</h1>
+        <p>Summary: {game.game.summary}</p>
+        <p>Playable coop campaign: {game.campaigncoop ? 'Yes' : 'No'}</p>
+        <p>Local multiplayer mode: {game.offlinecoop ? 'Yes' : 'No'}</p>
+        <p>Online multiplayer mode: {game.onlinecoop ? 'Yes' : 'No'}</p>
+        <p>Maximum players: {game.onlinemax}</p>
+        <p>{game.review}</p>
+        <p>{game.rating}</p>
+      </>
+    )}
 
  <DisplayReviews />   
      <AddReview refreshGame={getGame} gameId={gameId} />    
