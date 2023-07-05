@@ -9,6 +9,7 @@ import AddGame from './components/AddGame';
 import Games from './components/DisplayGamesPage';
 import GamesDetailsPage from './pages/GameDetailsPage';
 
+
 function App() {
   return (
     <div className="App">
