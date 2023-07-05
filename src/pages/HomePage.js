@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import NavBar from "../components/NavBar";
 import GameCard from "../components/GameCard";
@@ -68,6 +69,8 @@ function HomePage() {
           <h2>Randomly Generated Game</h2>
           <p>Name: {randomGame.game.name}</p>
           <p>Summary: {randomGame.game.summary}</p>
+         <button><Link to={`/games/${randomGame._id}`}><h3>See more details</h3>
+      </Link> </button>  
         </div>
       ) : (
         <ul>
