@@ -5,12 +5,13 @@ import { useNavigate } from "react-router-dom";
 function GameCard({ name, summary, cover, campaigncoop, offlinecoop, onlinecoop, onlinemax }) {
   const [showDetails, setShowDetails] = useState(false);
   const navigate = useNavigate(); 
-  const gameId = response.data._id;
+
+
   const handleDetailsClick = () => {
     setShowDetails(!showDetails);
   };
-  const handleRedirectClick = () => {
-    navigate(`/games/${gameId}`);
+  const handleRedirectClick = (gameId) => {
+    navigate(`/games/${gameId._id}`);
   };
 
   return (
