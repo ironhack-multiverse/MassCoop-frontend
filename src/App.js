@@ -10,6 +10,8 @@ import Games from './components/DisplayGamesPage';
 import GamesDetailsPage from './pages/GameDetailsPage';
 import ReviewCard from './components/ReviewCard';
 import EditReviewPage from './pages/EditReviewPage';
+import IsPrivate from "./components/IsPrivate";
+import IsAnon from "./components/IsAnon";
 
 function App() {
   return (
@@ -19,11 +21,11 @@ function App() {
 
  <Routes>
   <Route path="/" element={<HomePage /> } />
-  <Route path="/login" element={<LoginPage /> } />
-  <Route path="/signup" element={<SignupPage /> } />
+  <Route path="/signup" element={<IsAnon> <SignupPage /> </IsAnon>} />
+  <Route path="/login" element={<IsAnon> <LoginPage /> </IsAnon>} />
   <Route path="/games" element={<Games /> } />
-  <Route path="/games/create" element={<AddGame /> } />
-  <Route path="/reviews/edit/:reviewId" element={<EditReviewPage /> } />
+  <Route path="/games/create" element={<IsPrivate><AddGame /></IsPrivate> } />
+  <Route path="/reviews/edit/:reviewId" element={<IsPrivate> <EditReviewPage /> </IsPrivate>  } />
   <Route path="/games/:gameId" element={<GamesDetailsPage /> } />
   </Routes>
 
