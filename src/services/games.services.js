@@ -21,7 +21,6 @@ class GamesService {
     return this.api.post('/api/games', requestBody);
   }
 
-
  getAllGames = () => {
   return this.api.get('/api/games');
 }

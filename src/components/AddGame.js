@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import gamesService from "../services/games.services";
+//import gamesService from "../services/games.services";
 import { useNavigate } from "react-router-dom";
 
 const API_URL = "http://localhost:5005";
