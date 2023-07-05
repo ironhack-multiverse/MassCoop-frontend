@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import authService from "../services/auth.services";
 
 const AuthContext = React.createContext();
 
@@ -16,23 +16,19 @@ function AuthProviderWrapper(props) {
     const storedToken = localStorage.getItem("authToken");
     
     if (storedToken) {
-      axios.get(
-        `${process.env.REACT_APP_SERVER_URL}/auth/verify`, 
-        { headers: { Authorization: `Bearer ${storedToken}`} }
-      )
-      .then((response) => {
-        const user = response.data;
-     
-        setIsLoggedIn(true);
-        setIsLoading(false);
-        setUser(user);
-      })
-      .catch((error) => {
-     
-        setIsLoggedIn(false);
-        setIsLoading(false);
-        setUser(null);
-      });
+
+      authService.verify()
+        .then((response) => {
+          const user = response.data;
+          setIsLoggedIn(true);
+          setIsLoading(false);
+          setUser(user);
+        })
+        .catch((error) => {   
+          setIsLoggedIn(false);
+          setIsLoading(false);
+          setUser(null);
+        });
 
     } else {
       setIsLoggedIn(false);
@@ -48,7 +44,6 @@ function AuthProviderWrapper(props) {
   const logOutUser = () => {
     removeToken();
     authenticateUser();
-    console.log("logged out successfully")
   }    
 
 

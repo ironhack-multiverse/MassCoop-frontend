@@ -17,21 +17,10 @@ function NavBar({ currentUser }) {
         <button>Games</button>
       </Link>
 
- 
-
-      {/*   <Link to="/logout" onClick={handleLogout}>
-          Log out
-        </Link> */}
-
-       {/*  <>
-          <Link to="/signup">Sign up</Link>
-          <Link to="/login">Log in</Link>
-        </>
- */}
-
       <Link to="/games/create">
               <button>Add Game</button>
             </Link>
+            
 
             {!isLoggedIn && (
         <>
@@ -43,10 +32,10 @@ function NavBar({ currentUser }) {
             {" "}
             <button>Login</button>{" "}
           </Link>
-
-          <button onClick={logOutUser}>Logout</button>
           <span>{user && user.name}</span>
         </> )}
+
+        { isLoggedIn && (<button onClick={logOutUser}>Logout</button>)}
     </nav>
   );
 }

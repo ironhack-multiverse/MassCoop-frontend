@@ -25,12 +25,11 @@ function App() {
   <Route path="/signup" element={<IsAnon> <SignupPage /> </IsAnon>} />
   <Route path="/login" element={<IsAnon> <LoginPage /> </IsAnon>} />
   <Route path="/games" element={<Games /> } />
-  <Route path="/games/create" element={<IsPrivate><AddGame /></IsPrivate> } />
+  <Route path="/games/create" element={<IsPrivate> <AddGame /> </IsPrivate> } />
   <Route path="/reviews/edit/:reviewId" element={<IsPrivate> <EditReviewPage /> </IsPrivate>  } />
   <Route path="/games/:gameId" element={<GamesDetailsPage /> } />
   </Routes>
-
-    </div>
+    </div> 
   );
 }
 

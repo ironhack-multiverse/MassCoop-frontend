@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import authService from "../services/auth.services";
 
 const API_URL = "http://localhost:5005";
 
@@ -44,11 +45,10 @@ function SignupPage(props) {
       return;
     }
 
-    axios
-      .post(`${process.env.REACT_APP_SERVER_URL || API_URL}/auth/signup`, requestBody)
-      .then((response) => {
-        navigate("/login");
-      })
+    authService.signup(requestBody)
+    .then((response) => {
+      navigate("/login");
+    })
       .catch((error) => {
         console.log(error)
         const errorDescription = error.response.data.message;
