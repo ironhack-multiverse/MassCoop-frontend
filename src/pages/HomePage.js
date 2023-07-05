@@ -20,7 +20,7 @@ function HomePage() {
       .get(`${process.env.REACT_APP_SERVER_URL || API_URL}/api/games`)
       .then((response) => {
         setGames(response.data);
-      setFilteredGames(response.data);
+        setFilteredGames(response.data);
       })
       .catch((error) => console.log(error));
   };
@@ -58,39 +58,37 @@ function HomePage() {
     <div>
       <h1>Home Page</h1>
       <div className="button-group">
+        <button className="btn btn-primary" onClick={() => handleFilterClick("local")}>Local games</button>
+        <button className="btn btn-primary" onClick={() => handleFilterClick("online")}>Online games</button>
+        <button className="btn btn-primary" onClick={handleGenerateRandomGame}>Generate Random Game</button>
+      </div>
 
-      <button className="btn btn-primary" onClick={() => handleFilterClick("local")}>Local games</button>
-      <button className="btn btn-primary" onClick={() => handleFilterClick("online")}>Online games</button>
-      <button className="btn btn-primary" onClick={handleGenerateRandomGame}>Generate Random Game</button>
-</div>
-      {/* {randomGame ? renderRandom() : renderList()} */}
       {randomGame ? (
         <div>
           <h2>Randomly Generated Game</h2>
-          <p>Name: {randomGame.game.name}</p>
-          <p>Summary: {randomGame.game.summary}</p>
+          <p>Name: {randomGame.name}</p>
+          <p>Summary: {randomGame.summary}</p>
         </div>
       ) : (
         <ul>
-          {filterGames.length > 0 && filteredGames.map((element) => (
-            <div key={element._id}>
-              <GameCard {...element.game} {...element} />
-              {/* <h3>Name: {element.game?.name}</h3>
-              <img src={element.game?.cover?.url} alt={element.game?.name} /> */}
+          {filteredGames.length > 0 && filteredGames.map((game) => (
+            <div key={game._id}>
+              <GameCard
+                name={game.game.name}
+                summary={game.game.summary}
+                cover={game.game.cover}
+                campaigncoop={game.campaigncoop}
+                offlinecoop={game.offlinecoop}
+                onlinecoop={game.onlinecoop}
+                onlinemax={game.onlinemax}
+                _id={game._id}
+              />
             </div>
           ))}
         </ul>
       )}
-
-      {/* {randomGame && (
-        <div>
-          <h2>Randomly Generated Game</h2>
-          <p>Name: {randomGame.game.name}</p>
-          <p>Summary: {randomGame.game.summary}</p>
-        </div>
-      )} */}
     </div>
   );
 }
 
-export default HomePage;
+export default HomePage

@@ -1,18 +1,19 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link} from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 
-function GameCard({ name, summary, cover, campaigncoop, offlinecoop, onlinecoop, onlinemax }) {
+function GameCard({ _id, name, summary, cover, campaigncoop, offlinecoop, onlinecoop, onlinemax }) {
   const [showDetails, setShowDetails] = useState(false);
   const navigate = useNavigate(); 
 
 
   const handleDetailsClick = () => {
-    setShowDetails(!showDetails);
-  };
-  const handleRedirectClick = (gameId) => {
-    navigate(`/games/${gameId._id}`);
-  };
+   setShowDetails(!showDetails);
+   };
+  // const handleRedirectClick = () => {
+  //   navigate(`/games/${_id}`);
+  // };
 
   return (
     <div className="card">
@@ -31,8 +32,9 @@ function GameCard({ name, summary, cover, campaigncoop, offlinecoop, onlinecoop,
           <p>Offline Co-op: {offlinecoop ? "Yes" : "No"}</p>
           <p>Online Co-op: {onlinecoop ? "Yes" : "No"}</p>
           <p>Online Max Players: {onlinemax}</p>
-          <button onClick={handleRedirectClick}> See more details</button>
-        </div>
+          <Link to={`/games/${_id}`}><h3>See more details</h3>
+      </Link>        
+      </div>
       )}
     </div>
     </div>
