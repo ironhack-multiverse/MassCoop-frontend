@@ -20,12 +20,25 @@ code {
   };
 
  */
+
  body {
-  background-color: #1F1D35; /* Replace with your desired color */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+  background-color: #1F1D35; 
+ }
+
+.custom-nav {
+  background-color: #1F1D35;
+
+
 }
 .my-custom-card {
 
-  background-color: #DB0084!important;
+  border-color: #DB0084!important;
+  border-radius: 10px;
 
 
 }
