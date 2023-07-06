@@ -125,13 +125,13 @@ function NavBar({ currentUser }) {
 
       {isLoggedIn && <button onClick={logOutUser}>Logout</button>}
 
-      <div class="dropdown" data-bs-theme="light">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonLight" data-bs-toggle="dropdown" aria-expanded="false">
+      <div className="dropdown" data-bs-theme="light">
+  <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonLight" data-bs-toggle="dropdown" aria-expanded="false">
     🔅/🌙
   </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonLight">
-    <li><a class="dropdown-item active" href="#">Dark mode</a></li>
-    <li><a class="dropdown-item" href="#">Light mode</a></li>
+  <ul className="dropdown-menu" aria-labelledby="dropdownMenuButtonLight">
+    <li><a className="dropdown-item active" href="#">Dark mode</a></li>
+    <li><a className="dropdown-item" href="#">Light mode</a></li>
   
   </ul>
 </div>
