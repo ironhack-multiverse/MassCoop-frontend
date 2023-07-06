@@ -21,7 +21,6 @@ class AuthService {
 
   signup = (requestBody) => {
     return this.api.post("/auth/signup", requestBody);
-
   };
 
   verify = () => {

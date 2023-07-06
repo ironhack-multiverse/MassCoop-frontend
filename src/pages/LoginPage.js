@@ -31,7 +31,7 @@ function LoginPage(props) {
 
         storeToken(response.data.authToken);
         authenticateUser();
-        navigate("/");
+        navigate(-1);
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;

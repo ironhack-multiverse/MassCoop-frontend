@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
+import { AuthContext } from "../context/auth.context";
 
 const API_URL = "http://localhost:5005";
 
@@ -8,8 +9,9 @@ function AddReview(props) {
   const [comment, setComment] = useState([]);
   const [rating, setRating] = useState(0);
   const { gameId } = useParams();
+  const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
-  const handleComment= (e) => setComment(e.target.value);
+  const handleComment = (e) => setComment(e.target.value);
   const handleRating = (e) => setRating(e.target.value);
 
   const handleSubmit = (e) => {
@@ -29,20 +31,30 @@ function AddReview(props) {
       .then((response) => {
         setComment([]);
         setRating(0);
-       props.refreshGame();
+        props.refreshGame();
       })
       .catch((error) => console.log(error));
   };
   return (
     <div className="AddReview">
-      <h3>Add Review : </h3> {" "}
+      <h3>Add Review : </h3>{" "}
       <form onSubmit={handleSubmit}>
-        <label>Review </label> {" "}
-        <textarea type="text" name="comment" value={comment} onChange={handleComment} />
+        <label>Review </label>{" "}
+        <textarea
+          type="text"
+          name="comment"
+          value={comment}
+          onChange={handleComment}
+        />
         <br />
-        <label>Rating </label> {" "}
-        <input type="number" name="rating" value={rating} onChange={handleRating} />
-        <button type="submit">Submit</button>
+        <label>Rating </label>{" "}
+        <input
+          type="number"
+          name="rating"
+          value={rating}
+          onChange={handleRating}
+        />
+        {isLoggedIn && <button type="submit">Submit</button>}
       </form>
     </div>
   );

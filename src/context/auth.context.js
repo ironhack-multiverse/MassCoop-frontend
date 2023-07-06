@@ -7,45 +7,43 @@ function AuthProviderWrapper(props) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState(null);
-  
+
   const storeToken = (token) => {
     localStorage.setItem("authToken", token);
-  }  
-    
-  const authenticateUser = () => { 
-    const storedToken = localStorage.getItem("authToken");
-    
-    if (storedToken) {
+  };
 
-      authService.verify()
+  const authenticateUser = () => {
+    const storedToken = localStorage.getItem("authToken");
+
+    if (storedToken) {
+      authService
+        .verify()
         .then((response) => {
           const user = response.data;
           setIsLoggedIn(true);
           setIsLoading(false);
           setUser(user);
         })
-        .catch((error) => {   
+        .catch((error) => {
           setIsLoggedIn(false);
           setIsLoading(false);
           setUser(null);
         });
-
     } else {
       setIsLoggedIn(false);
       setIsLoading(false);
       setUser(null);
     }
-  }
+  };
 
   const removeToken = () => {
     localStorage.removeItem("authToken");
-  }    
-  
+  };
+
   const logOutUser = () => {
     removeToken();
     authenticateUser();
-  }    
-
+  };
 
   useEffect(() => {
     authenticateUser();
@@ -53,11 +51,18 @@ function AuthProviderWrapper(props) {
 
   return (
     <AuthContext.Provider
-      value={{ isLoggedIn, isLoading, user, storeToken, authenticateUser, logOutUser }}
+      value={{
+        isLoggedIn,
+        isLoading,
+        user,
+        storeToken,
+        authenticateUser,
+        logOutUser,
+      }}
     >
       {props.children}
     </AuthContext.Provider>
-  )
+  );
 }
 
 export { AuthProviderWrapper, AuthContext };

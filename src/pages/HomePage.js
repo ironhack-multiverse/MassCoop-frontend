@@ -59,9 +59,21 @@ function HomePage() {
     <div>
       <h1>Home Page</h1>
       <div className="button-group">
-        <button className="btn btn-primary" onClick={() => handleFilterClick("local")}>Local games</button>
-        <button className="btn btn-primary" onClick={() => handleFilterClick("online")}>Online games</button>
-        <button className="btn btn-primary" onClick={handleGenerateRandomGame}>Generate Random Game</button>
+        <button
+          className="btn btn-primary"
+          onClick={() => handleFilterClick("local")}
+        >
+          Local games
+        </button>
+        <button
+          className="btn btn-primary"
+          onClick={() => handleFilterClick("online")}
+        >
+          Online games
+        </button>
+        <button className="btn btn-primary" onClick={handleGenerateRandomGame}>
+          Generate Random Game
+        </button>
       </div>
 
       {randomGame ? (
@@ -69,29 +81,33 @@ function HomePage() {
           <h2>Randomly Generated Game</h2>
           <p>Name: {randomGame.game.name}</p>
           <p>Summary: {randomGame.game.summary}</p>
-         <button><Link to={`/games/${randomGame._id}`}><h3>See more details</h3>
-      </Link> </button>  
+          <button>
+            <Link to={`/games/${randomGame._id}`}>
+              <h3>See more details</h3>
+            </Link>{" "}
+          </button>
         </div>
       ) : (
         <ul>
-          {filteredGames.length > 0 && filteredGames.map((game) => (
-            <div key={game._id}>
-              <GameCard
-                name={game.game.name}
-                summary={game.game.summary}
-                cover={game.game.cover}
-                campaigncoop={game.campaigncoop}
-                offlinecoop={game.offlinecoop}
-                onlinecoop={game.onlinecoop}
-                onlinemax={game.onlinemax}
-                _id={game._id}
-              />
-            </div>
-          ))}
+          {filteredGames.length > 0 &&
+            filteredGames.map((game) => (
+              <div key={game._id}>
+                <GameCard
+                  name={game.game.name}
+                  summary={game.game.summary}
+                  cover={game.game.cover}
+                  campaigncoop={game.campaigncoop}
+                  offlinecoop={game.offlinecoop}
+                  onlinecoop={game.onlinecoop}
+                  onlinemax={game.onlinemax}
+                  _id={game._id}
+                />
+              </div>
+            ))}
         </ul>
       )}
     </div>
   );
 }
 
-export default HomePage
+export default HomePage;
