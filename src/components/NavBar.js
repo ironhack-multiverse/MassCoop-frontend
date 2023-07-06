@@ -85,15 +85,15 @@ function NavBar({ currentUser }) {
   }, []);
 
   return (
-    <Navbar expand="lg" className="bg-body-tertiary rounded">
+    <Navbar expand="lg" className="custom-nav bg-dark border border-light border-2 rounded">
       <Container>
         <Navbar.Brand href="/">
           <img
             alt=""
-            src="/Mass coop.gif"
-            width="150"
+            src="/mass-coop.png"
+            width="250"
             height="150"
-            className="d-inline-block align-top"
+            className="d-inline-block align-top animated bounce slow"
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
