@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
 import Form from 'react-bootstrap/Form';
+import { Button } from "react-bootstrap";
 
 const API_URL = "http://localhost:5005";
 
@@ -57,12 +58,12 @@ function LoginPage(props) {
           onChange={handlePassword}
         /></Form.Group>  
 
-        <button type="submit">Login</button>
+        <Button variant="danger" size="lg" type="submit">Login</Button>
    
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
       <p>Don't have an account yet?</p>
-      <Link to={"/signup"}> Sign Up</Link>
+      <Link to={"/signup"}> <Button variant="danger"> Sign Up</Button></Link>
       
       </Form>
   );
