@@ -72,7 +72,7 @@ function HomePage() {
           Online games
         </button>
         <button className="btn btn-primary" onClick={handleGenerateRandomGame}>
-          Generate Random Game
+          Get Random Game
         </button>
       </div>
 
