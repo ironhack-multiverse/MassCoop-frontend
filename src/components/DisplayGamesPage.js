@@ -30,7 +30,11 @@ import GameCard from "./GameCard";
               {games && games.map((element) => (
                 <div key={element._id}>
                   <GameCard  {...element.game}  { ...element}/>
+<<<<<<< HEAD
                   
+=======
+
+>>>>>>> 23c511386bd60b41e1966cfc94dc0e6b0596a0f9
                 </div>
               ))} 
             </section>
