@@ -12,10 +12,12 @@ import ReviewCard from "./components/ReviewCard";
 import EditReviewPage from "./pages/EditReviewPage";
 import IsPrivate from "./components/IsPrivate";
 import IsAnon from "./components/IsAnon";
+import Footer from "./components/Footer";
+
 
 function App() {
   return (
-    <div className="App container">
+    <div className="App">
       <NavBar />
 
       <Routes>
@@ -58,7 +60,11 @@ function App() {
           }
         />
         <Route path="/games/:gameId" element={<GamesDetailsPage />} />
+
+       
       </Routes>
+
+      <Footer />
     </div>
   );
 }

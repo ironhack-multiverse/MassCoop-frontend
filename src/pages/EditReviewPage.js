@@ -53,6 +53,7 @@ function EditReviewPage(props) {
 
         <label>Rating:</label>
         <input
+          type="number"
           name="number"
           value={rating}
           onChange={(e) => setRating(e.target.value)}
