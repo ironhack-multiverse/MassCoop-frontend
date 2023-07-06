@@ -56,8 +56,8 @@ function HomePage() {
   };
 
   return (
-    <div>
-      <h1>Home Page</h1>
+    <div className="container">
+
       <div className="button-group">
         <button
           className="btn btn-primary"
@@ -88,7 +88,7 @@ function HomePage() {
           </button>
         </div>
       ) : (
-        <ul>
+        <div className="row">
           {filteredGames.length > 0 &&
             filteredGames.map((game) => (
               <div key={game._id}>
@@ -104,7 +104,7 @@ function HomePage() {
                 />
               </div>
             ))}
-        </ul>
+        </div>
       )}
     </div>
   );
