@@ -85,14 +85,14 @@ function NavBar({ currentUser }) {
   }, []);
 
   return (
-    <Navbar expand="lg" className="custom-nav bg-dark border border-light border-2 rounded">
+    <Navbar bg="dark" data-bs-theme="dark">
       <Container>
         <Navbar.Brand href="/">
           <img
             alt=""
-            src="/mass-coop.png"
-            width="250"
-            height="150"
+            src="/mass-coop-logo.png"
+            width="150"
+            height="75"
             className="d-inline-block align-top animated bounce slow"
           />
         </Navbar.Brand>
