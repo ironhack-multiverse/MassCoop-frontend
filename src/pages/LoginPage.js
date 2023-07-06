@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
+import Form from 'react-bootstrap/Form';
 
 const API_URL = "http://localhost:5005";
 
@@ -40,28 +41,30 @@ function LoginPage(props) {
   };
 
   return (
-    <div className="LoginPage">
+    <Form>
       <h1>Login</h1>
 
-      <form onSubmit={handleLoginSubmit}>
-        <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
-
-        <label>Password:</label>
-        <input
+      <Form.Group  className="mb-3" controlId="formGroupEmail" onSubmit={handleLoginSubmit}>
+      <Form.Label>Email:</Form.Label>
+      <Form.Control type="email" name="email" value={email} onChange={handleEmail} />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formGroupPassword">
+        <Form.Label>Password:</Form.Label>
+        <Form.Control
           type="password"
           name="password"
           value={password}
           onChange={handlePassword}
-        />
+        /></Form.Group>  
 
         <button type="submit">Login</button>
-      </form>
+   
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
       <p>Don't have an account yet?</p>
       <Link to={"/signup"}> Sign Up</Link>
-    </div>
+      
+      </Form>
   );
 }
 

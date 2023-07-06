@@ -20,3 +20,17 @@ code {
   };
 
  */
+ body {
+  background-color: #1F1D35; /* Replace with your desired color */
+}
+.my-custom-card {
+
+  background-color: #DB0084!important;
+
+
+}
+.my-custom-button {
+
+  background-color: #1B3C60; /* Replace with your desired color */
+
+}

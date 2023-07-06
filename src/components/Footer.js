@@ -1,11 +1,14 @@
+
 function Footer () {
     return(
-<footer className="footer mt-auto py-3 bg-light">
-  <div className="container">
-    <span className="text-muted">Place sticky footer content here.</span>
-  </div>
-</footer>
+<div className="Footer">
+  <footer >
+    <div>
+      <p>&copy; 2023 Mass Coop - by Lina & Ola</p>
+    </div>
 
+  </footer>
+</div>
 
     )
 }

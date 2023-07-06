@@ -26,9 +26,9 @@ function EditReviewPage(props) {
     e.preventDefault();
     const requestBody = { comment, rating };
 
-    reviewsService.updateReview(reviewId, requestBody).then((response) => {
-      navigate(-1);
-    });
+    reviewsService.updateReview(reviewId, requestBody)
+    .then((response) => navigate(-1))
+    .catch((err) => console.log(err));
   };
 
   const deleteReview = () => {
@@ -53,6 +53,7 @@ function EditReviewPage(props) {
 
         <label>Rating:</label>
         <input
+          type="number"
           name="number"
           value={rating}
           onChange={(e) => setRating(e.target.value)}
