@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 const API_URL = "http://localhost:5005";
 
 function AddGame(props) {
+  const storedToken = localStorage.getItem("authToken");
+
   const navigate = useNavigate();
   const [name, setName] = useState("");
   const [summary, setSummary] = useState("");
@@ -45,7 +47,9 @@ function AddGame(props) {
       .post(
         `${process.env.REACT_APP_SERVER_URL || API_URL}/api/games`,
         requestBody,
-        {}
+        { headers: { Authorization: `Bearer ${storedToken}` } }
+
+
       )
       .then((response) => {
         setName("");
@@ -57,6 +61,8 @@ function AddGame(props) {
         setOfflinemax(0);
         const gameId = response.data._id;
         navigate(`/games/${gameId}`);
+        console.log(response.data);
+      
       })
       .catch((error) => console.log(error));
   };
