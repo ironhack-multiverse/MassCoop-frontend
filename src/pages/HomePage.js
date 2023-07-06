@@ -67,8 +67,11 @@ function HomePage() {
       {randomGame ? (
         <div>
           <h2>Randomly Generated Game</h2>
+          <img src={randomGame.game.cover.url} alt={randomGame.game.name} className="card-img-top" />
+
           <p>Name: {randomGame.game.name}</p>
           <p>Summary: {randomGame.game.summary}</p>
+
          <button><Link to={`/games/${randomGame._id}`}><h3>See more details</h3>
       </Link> </button>  
         </div>
