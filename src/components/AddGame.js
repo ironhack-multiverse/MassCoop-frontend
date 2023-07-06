@@ -22,8 +22,6 @@ function AddGame(props) {
   const handleOnlinecoop = (e) => setOnlinecoop(e.target.checked);
   const handleOnlinemax = (e) => setOnlinemax(e.target.value);
   const handleOfflinemax = (e) => setOfflinemax(e.target.value);
-  
-
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -43,12 +41,12 @@ function AddGame(props) {
     // return
 
     //const storedToken = localStorage.getItem("authToken");
-      axios
+    axios
       .post(
         `${process.env.REACT_APP_SERVER_URL || API_URL}/api/games`,
         requestBody,
         {}
-      ) 
+      )
       .then((response) => {
         setName("");
         setSummary("");

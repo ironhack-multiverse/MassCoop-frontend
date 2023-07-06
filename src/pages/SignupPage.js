@@ -45,12 +45,13 @@ function SignupPage(props) {
       return;
     }
 
-    authService.signup(requestBody)
-    .then((response) => {
-      navigate("/login");
-    })
+    authService
+      .signup(requestBody)
+      .then((response) => {
+        navigate("/login");
+      })
       .catch((error) => {
-        console.log(error)
+        console.log(error);
         const errorDescription = error.response.data.message;
         setErrorMessage({ general: errorDescription });
       });
@@ -84,23 +85,21 @@ function SignupPage(props) {
         </label>
         <label>Birth:</label>
         <input type="date" name="date" value={birth} onChange={handleBirth} />
-      
-          <label>
-            Preferences:
-            <select
-              name="preferences"
-              value={preferences}
-              onChange={handlePreferences}
-            >
-              <option value="">Select an option </option>
-              <option value="Online games">Online games</option>
-              <option value="Local/offline games">Local/offline games</option>
-              <option value="Both online and local">
-                Both online and local
-              </option>
-            </select>
-            {errorMessage.preferences && <p> {errorMessage.preferences} </p>}
-          </label>
+
+        <label>
+          Preferences:
+          <select
+            name="preferences"
+            value={preferences}
+            onChange={handlePreferences}
+          >
+            <option value="">Select an option </option>
+            <option value="Online games">Online games</option>
+            <option value="Local/offline games">Local/offline games</option>
+            <option value="Both online and local">Both online and local</option>
+          </select>
+          {errorMessage.preferences && <p> {errorMessage.preferences} </p>}
+        </label>
         <p> All * fields are required</p>
         <button type="submit">Sign Up</button>
       </form>

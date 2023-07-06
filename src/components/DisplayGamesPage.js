@@ -4,38 +4,34 @@ import { Link } from "react-router-dom";
 import AddGame from "./AddGame";
 import GameCard from "./GameCard";
 
-    function DisplayGamesPage() {
-        const [games, setGames] = useState(null);
-      
-        const getAllGames = () => {
-          axios
-            .get(`${process.env.REACT_APP_SERVER_URL}/api/games`)
-            .then((response) => 
-           setGames(response.data))
-           .catch((error) => console.log(error));
+function DisplayGamesPage() {
+  const [games, setGames] = useState(null);
 
-        };
-      
-        // We set this effect will run only once, after the initial render
-        // by setting the empty dependency array - []
-        useEffect(() => {
-          getAllGames();
-        }, [] );
+  const getAllGames = () => {
+    axios
+      .get(`${process.env.REACT_APP_SERVER_URL}/api/games`)
+      .then((response) => setGames(response.data))
+      .catch((error) => console.log(error));
+  };
 
+  // We set this effect will run only once, after the initial render
+  // by setting the empty dependency array - []
+  useEffect(() => {
+    getAllGames();
+  }, []);
 
-        return (
-            <section className="GamesList">
-              <h1>Games List</h1>
-          
-              {games && games.map((element) => (
-                <div key={element._id}>
-                  <GameCard  {...element.game}  { ...element}/>
-                  
-                </div>
-              ))} 
-            </section>
-          );}
-          
+  return (
+    <section className="GamesList">
+      <h1>Games List</h1>
 
+      {games &&
+        games.map((element) => (
+          <div key={element._id}>
+            <GameCard {...element.game} {...element} />
+          </div>
+        ))}
+    </section>
+  );
+}
 
 export default DisplayGamesPage;

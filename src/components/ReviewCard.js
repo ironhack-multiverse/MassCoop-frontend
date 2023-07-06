@@ -1,31 +1,17 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import reviewsService from "../services/reviews.services";
 import { computeHeadingLevel } from "@testing-library/react";
+import { AuthContext } from "../context/auth.context";
+
 
 function ReviewCard(props) {
   const { gameId } = useParams();
   const { reviewId } = useParams();
   const [game, setGame] = useState(null);
+  const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
-  // const getGame = () => {
-  //   axios
-  //     .get(`${process.env.REACT_APP_SERVER_URL}/api/games/${gameId}`)
-  //     .then((response) => {
-  //       setGame(response.data);
-  //     })
-  //     .catch((error) => console.log(error));
-  // };
-
-  // useEffect(() => {
-  //   getGame();
-  // }, []);
-
-  // if (!game) {
-  //   return <div>Loading...</div>;
-  // }
-  // useEffect(() => {}, [props.reviews])
   const handleDelete = (id) => {
     reviewsService
       .deleteReview(id)
@@ -43,12 +29,14 @@ function ReviewCard(props) {
           <h3>Rating: {review.rating}</h3>
 
           <Link to={`/reviews/edit/${review._id}`}>
-            <button>Edit Review</button>
+            {isLoggedIn && <button>Edit Review</button>}
           </Link>
 
-          <button onClick={() => handleDelete(review._id)}>
-            Delete Review
-          </button>
+          {isLoggedIn && (
+            <button onClick={() => handleDelete(review._id)}>
+              Delete Review
+            </button>
+          )}
         </div>
       ))}
     </section>
