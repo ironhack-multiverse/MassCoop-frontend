@@ -90,7 +90,8 @@ function HomePage() {
           </button>
         </div>
       ) : (
-        <div className="row">
+        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
           {filteredGames.length > 0 &&
             filteredGames.map((game) => (
               <div key={game._id}>

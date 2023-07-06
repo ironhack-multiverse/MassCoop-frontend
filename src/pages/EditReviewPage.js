@@ -26,9 +26,9 @@ function EditReviewPage(props) {
     e.preventDefault();
     const requestBody = { comment, rating };
 
-    reviewsService.updateReview(reviewId, requestBody).then((response) => {
-      navigate(-1);
-    });
+    reviewsService.updateReview(reviewId, requestBody)
+    .then((response) => navigate(-1))
+    .catch((err) => console.log(err));
   };
 
   const deleteReview = () => {
