@@ -30,11 +30,7 @@ import GameCard from "./GameCard";
               {games && games.map((element) => (
                 <div key={element._id}>
                   <GameCard  {...element.game}  { ...element}/>
-                  <h3> Name: {element.game?.name}</h3>
-                   <img src={element.game?.cover?.url} alt={element.name} /> 
-       {/*    
                   
-                  <Link to={`/games/${element._id}`}>More details</Link> */}
                 </div>
               ))} 
             </section>
