@@ -21,6 +21,15 @@ code {
 
  */
 
+@font-face {
+  font-family: 'lasticaregular';
+  src: url('/public/fonts/lastica-webfont.woff2') format('woff2'),
+       url('/public/fonts/lastica-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
  @font-face {
   font-family: 'debug_free_trialregular';
   src: url('/public/fonts/debugfreetrial-mvdyb-webfont.woff2') format('woff2'),
@@ -42,9 +51,14 @@ code {
 
 }
 
- body {
-  font-family: 'debug_free_trialregular', sans-serif;
+h1 {
+  font-family: 'lasticaregular', sans-serif;
 
+
+}
+
+ body {
+  font-family:'lasticaregular';
   background-color: #1F1D35; 
  }
 
