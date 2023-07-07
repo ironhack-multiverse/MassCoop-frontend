@@ -57,22 +57,24 @@ function HomePage() {
 
   return (
     <div>
+      <div className='banner'>
       <div className="button-group">
         <button
-          className="btn btn-primary btn-lg"
+          className="btn btn-primary btn-lg mr-3"
           onClick={() => handleFilterClick("local")}
         >
           Local games
         </button>
         <button
-          className="btn btn-primary btn-lg"
+          className="btn btn-primary btn-lg mr-3"
           onClick={() => handleFilterClick("online")}
         >
           Online games
         </button>
-        <button className="btn btn-primary btn-lg" onClick={handleGenerateRandomGame}>
+        <button className="btn btn-primary btn-lg m" onClick={handleGenerateRandomGame}>
           I am feeling lucky!
         </button>
+      </div>
       </div>
       <div className="container">
         <div className="image-container">
