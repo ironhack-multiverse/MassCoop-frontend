@@ -58,59 +58,102 @@ function SignupPage(props) {
   };
 
   return (
-    <div className="SignupPage">
-      <h1>Sign Up</h1>
+    <section class="vh-100">
+      <div class="container">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card shadow-2-strong" style={{ borderRadius: "1rem;" }}>
+              <div class="card-body p-5 text-center">
+                <h3 class="mb-5">Sign Up</h3>
+                <form onSubmit={handleSignupSubmit}>
+                  <label class="form-label" for="typeEmailX-2">
+                    Email*
+                  </label>
+                  <div class="form-outline mb-4">
+                    <input
+                      type="email"
+                      id="typeEmailX-2"
+                      name="email"
+                      value={email}
+                      onChange={handleEmail}
+                      class="form-control form-control-lg"
+                    />
+                    {errorMessage.email && <p> {errorMessage.email} </p>}
+                  </div>
 
-      <form onSubmit={handleSignupSubmit}>
-        <label>
-          Email* :{" "}
-          <input
-            type="email"
-            name="email"
-            value={email}
-            onChange={handleEmail}
-          />
-          {errorMessage.email && <p> {errorMessage.email} </p>}
-        </label>
-        <label>Password* : </label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePassword}
-        />
-        <label>
-          Name* :{" "}
-          <input type="text" name="name" value={name} onChange={handleName} />
-        </label>
-        <label>Birth:</label>
-        <input type="date" name="date" value={birth} onChange={handleBirth} />
-
-        <label>
-          Preferences:
-          <select
-            name="preferences"
-            value={preferences}
-            onChange={handlePreferences}
-          >
-            <option value="">Select an option </option>
-            <option value="Online games">Online games</option>
-            <option value="Local/offline games">Local/offline games</option>
-            <option value="Both online and local">Both online and local</option>
-          </select>
-          {errorMessage.preferences && <p> {errorMessage.preferences} </p>}
-        </label>
-        <p> All * fields are required</p>
-        <button type="submit">Sign Up</button>
-      </form>
-
-      {errorMessage.general && (
-        <p className="error-message">{errorMessage.general}</p>
-      )}
-
-      <p>Already have account?</p>
-      <Link to={"/login"}> Login</Link>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="typePasswordX-2">
+                      Password*
+                    </label>
+                    <input
+                      type="password"
+                      id="typePasswordX-2"
+                      name="password"
+                      value={password}
+                      onChange={handlePassword}
+                      class="form-control form-control-lg"
+                    />
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="typePasswordX-2">
+                      Name*
+                    </label>
+                    <input
+                      type="text"
+                      name="name"
+                      value={name}
+                      onChange={handleName}
+                      class="form-control form-control-lg"
+                    />
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="typePasswordX-2"> Birth*</label>
+    <input type="date" name="date" value={birth} onChange={handleBirth}  class="form-control form-control-lg" />
     </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="typePasswordX-2">
+                      Preferences*
+                    </label>
+                    <select
+                      name="preferences"
+                      value={preferences}
+                      onChange={handlePreferences}
+                      class="form-control form-control-lg"
+                    >
+                      <option value="">Select an option </option>
+                      <option value="Online games">Online games</option>
+                      <option value="Local/offline games">
+                        Local/offline games
+                      </option>
+                      <option value="Both online and local">
+                        Both online and local
+                      </option>
+                    </select>
+                    {errorMessage.preferences && (
+                      <p> {errorMessage.preferences} </p>
+                    )}
+                  </div>
+                  <p> All * fields are required</p>
+                  <button
+                    class="btn btn-primary btn-lg btn-block"
+                    type="submit"
+                  >
+                    Sign Up
+                  </button>
+                </form>
+
+                {errorMessage.general && (
+                  <p className="error-message">{errorMessage.general}</p>
+                )}
+
+                <p>Already have account?</p>
+                <Link to={"/login"}> Login</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
