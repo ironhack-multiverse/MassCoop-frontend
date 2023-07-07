@@ -58,28 +58,34 @@ function HomePage() {
   return (
     <div>
       <div className='banner'>
-      <div className="button-group">
-        <button
-          className="btn btn-primary btn-lg mr-3 custom-button"
-          onClick={() => handleFilterClick("local")}
-        >
-          Local games
-        </button>
-        <button
-          className="btn btn-primary btn-lg custom-button secondary"
-          onClick={() => handleFilterClick("online")}
-        >
-          Online games
-        </button>
-        <button className="btn btn-primary btn-lg custom-button tertiary m" onClick={handleGenerateRandomGame}>
-          I am feeling lucky!
-        </button>
-      </div>
-      </div>
-      <div className="container">
-        <div className="image-container">
-          <h1>Struggling to find multiplayer games to enjoy with friends?</h1>
+
+      <div>
+          <h1 className ="slogan">Struggling to find multiplayer games?<br/> We gotch ya!</h1>
         </div>
+        
+        <div className="button-group">
+          <button
+            className="btn btn-primary btn-lg mr-3 custom-button"
+            onClick={() => handleFilterClick("local")}
+          >
+            Local games
+          </button>
+          <button
+            className="btn btn-primary btn-lg custom-button secondary"
+            onClick={() => handleFilterClick("online")}
+          >
+            Online games
+          </button>
+          <button className="btn btn-primary btn-lg custom-button tertiary m" onClick={handleGenerateRandomGame}>
+            I am feeling lucky!
+          </button>
+        </div>
+        
+      </div>
+    
+  
+      <div className="container">
+        <div className="image-container"></div>
         {randomGame ? (
           <div className="d-flex justify-content-center align-items-center flex-column">
             <h2>Here is your game!</h2>
@@ -116,6 +122,5 @@ function HomePage() {
       </div>
     </div>
   );
-}
-
+              }
 export default HomePage;

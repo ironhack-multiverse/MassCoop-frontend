@@ -100,17 +100,20 @@ h2 {
   width: 100%;
 }
 .banner {
+padding-top: 100px;
+height: 250px;
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),
     url("/public/banner2.gif");
   background-size: cover;
   background-position: center;
-  height: 120vh;
-  display: flex;
+  height: 89vh;
+  display: flex center inside;
   justify-content: center;
   align-items: center;
 }
   
 .button-group { 
+  
   height: 80px;
   display: flex;
   justify-content: center;
@@ -131,4 +134,8 @@ h2 {
   color: white;
   background-image: linear-gradient(to right, hotpink , rgb(255, 140, 0));
 
+}
+.slogan{
+  padding-top: 250px;
+  padding-bottom: 100px;
 }
