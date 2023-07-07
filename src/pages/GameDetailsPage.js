@@ -56,22 +56,22 @@ function GamesDetailsPage(props) {
                 {game.game && game.game.cover && game.game.cover.url && (
                   <img src={game.game.cover.url} alt="cover" />
                 )}
-                <h1>Game name: {game.game.name}</h1>
-                <p>Summary: {game.game.summary}</p>
+                <h1><span className="fw-bold badge bg-primary text-wrap">{game.game.name}</span></h1>
+                <p><span className="fw-bold badge bg-primary text-wrap">Summary:</span> {game.game.summary}</p>
                 <p>
-                  Playable coop campaign:{" "}
+                <span className="fw-bold badge bg-primary text-wrap">Playable coop campaign:</span>{" "}
                   {game.campaigncoop ? "available" : "unavailable"}
                 </p>
                 <p>
-                  Local coop multiplayer mode:{" "}
+                <span className="fw-bold badge bg-primary text-wrap"> Local coop multiplayer mode:</span>{" "}
                   {game.offlinecoop ? "available" : "unavailable"}
                 </p>
                 <p>
-                  Online multiplayer mode:{" "}
+                <span className="fw-bold badge bg-primary text-wrap"> Online multiplayer mode:</span>{" "}
                   {game.onlinecoop ? "available" : "unavailable"}
                 </p>
-                <p>Maximum online players: {game.onlinemax || 0}</p>
-                <p>Maximum offline players: {game.offlinemax || 0}</p>
+                <p><span className="fw-bold badge bg-primary text-wrap">Maximum online players: </span>{game.onlinemax || 0}</p>
+                <p><span className="fw-bold badge bg-primary text-wrap">Maximum offline players:</span> {game.offlinemax || 0}</p>
                 <p>{game.review}</p>
                 <p>{game.rating}</p>
               </>

@@ -65,20 +65,17 @@ function AddGame(props) {
   };
 
   return (
-    <div class="detail-card vh-50">
-      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-        <div
-          class="card shadow-2-strong"
-          style={{ borderRadius: "1rem;" }}
-        ></div>
-        <div className="AddGame">
+    <div class="detail-card pt-0 pb-0">
+    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+    <div class="card shadow-2-strong" style={{ borderRadius: "1rem;" }}>
+        <div className="AddGame pt-5 pb-5">
           <h3>Add Game</h3>
 
           <form onSubmit={handleSubmit}>
-            <label>Name of the game: </label>
+            <label>Name of the game: </label> {"  "}
             <input type="text" name="name" value={name} onChange={handleName} />
             <br />
-            <label>Description : </label>
+            <label>Description : </label> {"  "}
             <textarea
               type="text"
               name="summary"
@@ -86,7 +83,7 @@ function AddGame(props) {
               onChange={handleSummary}
             />
             <br />
-            <label>Campaign playable in coop : </label>
+            <label>Campaign playable in coop : </label> {"  "}
             <input
               type="checkbox"
               name="summary"
@@ -95,7 +92,7 @@ function AddGame(props) {
             />
 
             <br />
-            <label> Local coop mode : </label>
+            <label> Local coop mode : </label> {"  "}
             <input
               type="checkbox"
               name="offlinecoop"
@@ -104,7 +101,7 @@ function AddGame(props) {
             />
 
             <br />
-            <label>Online coop mode : </label>
+            <label>Online coop mode : </label> {"  "}
             <input
               type="checkbox"
               name="onlinecoop"
@@ -113,26 +110,31 @@ function AddGame(props) {
             />
 
             <br />
-            <label>Numbers maximum of online players : </label>
+            <label>Numbers maximum of online players : </label> {"  "}
             <input
               type="number"
+              min="1"
+              max="99"
               name="onlinemax"
               value={onlinemax}
               onChange={handleOnlinemax}
             ></input>
             <br />
-            <label>Numbers maximum of offline players : </label>
+            <label>Numbers maximum of offline players : </label> {"  "}
             <input
               type="number"
+              min="1"
+              max="99"
               name="offlinemax"
               value={offlinemax}
               onChange={handleOfflinemax}
             ></input>
             <br />
-            <button type="submit">Submit</button>
+            <button className="btn btn-primary" type="submit">Submit</button>
           </form>
         </div>
       </div>
+    </div>
     </div>
   );
 }
