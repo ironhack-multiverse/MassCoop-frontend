@@ -56,61 +56,62 @@ function HomePage() {
   };
 
   return (
-    <div className="container">
-
+    <div>
       <div className="button-group">
         <button
-          className="btn btn-primary"
+          className="btn btn-primary btn-lg"
           onClick={() => handleFilterClick("local")}
         >
           Local games
         </button>
         <button
-          className="btn btn-primary"
+          className="btn btn-primary btn-lg"
           onClick={() => handleFilterClick("online")}
         >
           Online games
         </button>
-        <button className="btn btn-primary" onClick={handleGenerateRandomGame}>
-          Get Random Game
+        <button className="btn btn-primary btn-lg" onClick={handleGenerateRandomGame}>
+          I am feeling lucky!
         </button>
       </div>
-
-      {randomGame ? (
-        <div>
-          <h2>Randomly Generated Game</h2>
-          <GameCard
-            name={randomGame.game.name}
-            cover={randomGame.game.cover}
-
-            summary={randomGame.game.summary}
-            campaigncoop={randomGame.campaigncoop}
-            offlinecoop={randomGame.offlinecoop}
-            onlinecoop={randomGame.onlinecoop}
-            onlinemax={randomGame.onlinemax}
-            _id={randomGame._id}
-          />
+      <div className="container">
+        <div className="image-container">
+          <h1>Struggling to find multiplayer games to enjoy with friends?</h1>
         </div>
-      ) : (
-        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-          {filteredGames.length > 0 &&
-            filteredGames.map((game) => (
-              <div key={game._id}>
-                <GameCard
-                 cover={game.game.cover}
-
-                  name={game.game.name}
-                  summary={game.game.summary}
-                  campaigncoop={game.campaigncoop}
-                  offlinecoop={game.offlinecoop}
-                  onlinecoop={game.onlinecoop}
-                  onlinemax={game.onlinemax}
-                  _id={game._id}
-                />
-              </div>
-            ))}
-        </div>
-      )}
+        {randomGame ? (
+          <div className="d-flex justify-content-center align-items-center flex-column">
+            <h2>Here is your game!</h2>
+            <GameCard
+              name={randomGame.game.name}
+              cover={randomGame.game.cover}
+              summary={randomGame.game.summary}
+              campaigncoop={randomGame.campaigncoop}
+              offlinecoop={randomGame.offlinecoop}
+              onlinecoop={randomGame.onlinecoop}
+              onlinemax={randomGame.onlinemax}
+              _id={randomGame._id}
+            />
+          </div>
+        ) : (
+          <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            {filteredGames.length > 0 &&
+              filteredGames.map((game) => (
+                <div key={game._id}>
+                  <GameCard
+                    cover={game.game.cover}
+                    name={game.game.name}
+                    summary={game.game.summary}
+                    campaigncoop={game.campaigncoop}
+                    offlinecoop={game.offlinecoop}
+                    onlinecoop={game.onlinecoop}
+                    onlinemax={game.onlinemax}
+                    _id={game._id}
+                  />
+                </div>
+              ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }
