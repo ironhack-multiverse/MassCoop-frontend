@@ -91,7 +91,7 @@ function NavBar({ currentUser }) {
           <img
             alt=""
             src="/mass-coop.png"
-            width="250"
+            width="280"
             height="150"
             className="d-inline-block align-top animated bounce slow"
           />

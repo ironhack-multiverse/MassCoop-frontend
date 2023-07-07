@@ -21,12 +21,30 @@ code {
 
  */
 
+ @font-face {
+  font-family: 'debug_free_trialregular';
+  src: url('/public/fonts/debugfreetrial-mvdyb-webfont.woff2') format('woff2'),
+       url('/public/fonts/debugfreetrial-mvdyb-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+
+
+
+@font-face {
+  font-family: 'debug_free_trialregular';
+  src: url('/public/fonts/debugfreetrial-mvdyb-webfont.woff2') format('woff2'),
+       url('/public/fonts/debugfreetrial-mvdyb-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
  body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
+  font-family: 'debug_free_trialregular', sans-serif;
+
   background-color: #1F1D35; 
  }
 
@@ -42,8 +60,17 @@ code {
 
 
 }
+
 .my-custom-button {
 
   background-color: #1B3C60; /* Replace with your desired color */
+
+}
+.button-group { 
+  background-image: url("../public/banner.jpg");
+  background-size: 100% auto;
+  background-position: center;
+  height: 300px;
+
 
 }

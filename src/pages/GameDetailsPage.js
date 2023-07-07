@@ -46,7 +46,11 @@ function GamesDetailsPage(props) {
   }, []);
 
   return (
+  
+
+
     <div className="GameDetails">
+      <h1>this is more info</h1>
       <br />
       {game && (
         <>
