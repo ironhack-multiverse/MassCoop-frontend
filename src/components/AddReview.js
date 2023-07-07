@@ -36,6 +36,9 @@ function AddReview(props) {
       .catch((error) => console.log(error));
   };
   return (
+    <div class="detail-card vh-50">
+    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+      <div class="card shadow-2-strong" style={{ borderRadius: "1rem;" }}>
     <div className="AddReview">
       <h3>Add Review : </h3>{" "}
       <form onSubmit={handleSubmit}>
@@ -56,6 +59,9 @@ function AddReview(props) {
         />
         {isLoggedIn && <button type="submit">Submit</button>}
       </form>
+    </div>
+    </div>
+    </div>
     </div>
   );
 }
