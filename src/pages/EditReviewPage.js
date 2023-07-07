@@ -26,9 +26,10 @@ function EditReviewPage(props) {
     e.preventDefault();
     const requestBody = { comment, rating };
 
-    reviewsService.updateReview(reviewId, requestBody)
-    .then((response) => navigate(-1))
-    .catch((err) => console.log(err));
+    reviewsService
+      .updateReview(reviewId, requestBody)
+      .then((response) => navigate(-1))
+      .catch((err) => console.log(err));
   };
 
   const deleteReview = () => {
@@ -39,30 +40,41 @@ function EditReviewPage(props) {
   };
 
   return (
-    <div className="EditReviewPage">
-      <h3>Edit the Review</h3>
+    <div class="detail-card pt-0 pb-0">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card shadow-2-strong" style={{ borderRadius: "1rem;" }}>
+          <div className="EditReviewPage pt-5 pb-5">
+            <h3>Edit the Review</h3>
 
-      <form onSubmit={handleFormSubmit}>
-        <label>Comment:</label>
-        <textarea
-          type="text"
-          name="comment"
-          value={comment}
-          onChange={(e) => setComment(e.target.value)}
-        />
-
-        <label>Rating:</label>
-        <input
-          type="number"
-          name="number"
-          value={rating}
-          onChange={(e) => setRating(e.target.value)}
-        />
-
-        {isLoggedIn && <button type="submit">Update Review</button>}
-      </form>
-
-      {isLoggedIn && <button onClick={deleteReview}>Delete Review</button>}
+            <form onSubmit={handleFormSubmit}>
+              <label>Comment:</label> {"  "}
+              <textarea
+                type="text"
+                name="comment"
+                value={comment}
+                onChange={(e) => setComment(e.target.value)}
+              />{" "}
+              <br />
+              <label>Rating:</label> {"  "}
+              <input
+                type="number"
+                min="1"
+                max="10"
+                name="number"
+                value={rating}
+                onChange={(e) => setRating(e.target.value)}
+              />{" "}
+              <br />
+              <br />
+              {isLoggedIn && <button className="btn btn-primary" type="submit">Update Review</button>}
+            </form>
+            <br />
+            {isLoggedIn && (
+              <button className="btn btn-primary" onClick={deleteReview}>Delete Review</button>
+            )}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

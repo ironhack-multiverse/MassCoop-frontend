@@ -48,8 +48,6 @@ function AddGame(props) {
         `${process.env.REACT_APP_SERVER_URL || API_URL}/api/games`,
         requestBody,
         { headers: { Authorization: `Bearer ${storedToken}` } }
-
-
       )
       .then((response) => {
         setName("");
@@ -62,72 +60,81 @@ function AddGame(props) {
         const gameId = response.data._id;
         navigate(`/games/${gameId}`);
         console.log(response.data);
-      
       })
       .catch((error) => console.log(error));
   };
 
   return (
-    <div className="AddGame">
-      <h3>Add Game</h3>
+    <div class="detail-card pt-0 pb-0">
+    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+    <div class="card shadow-2-strong" style={{ borderRadius: "1rem;" }}>
+        <div className="AddGame pt-5 pb-5">
+          <h3>Add Game</h3>
 
-      <form onSubmit={handleSubmit}>
-        <label>Name of the game: </label>
-        <input type="text" name="name" value={name} onChange={handleName} />
-        <br />
-        <label>Description : </label>
-        <textarea
-          type="text"
-          name="summary"
-          value={summary}
-          onChange={handleSummary}
-        />
-        <br />
-        <label>Campaign playable in coop : </label>
-        <input
-          type="checkbox"
-          name="summary"
-          defaultChecked={campaigncoop}
-          onChange={handleCampaigncoop}
-        />
+          <form onSubmit={handleSubmit}>
+            <label>Name of the game: </label> {"  "}
+            <input type="text" name="name" value={name} onChange={handleName} />
+            <br />
+            <label>Description : </label> {"  "}
+            <textarea
+              type="text"
+              name="summary"
+              value={summary}
+              onChange={handleSummary}
+            />
+            <br />
+            <label>Campaign playable in coop : </label> {"  "}
+            <input
+              type="checkbox"
+              name="summary"
+              defaultChecked={campaigncoop}
+              onChange={handleCampaigncoop}
+            />
 
-        <br />
-        <label> Local coop mode : </label>
-        <input
-          type="checkbox"
-          name="offlinecoop"
-          defaultChecked={offlinecoop}
-          onChange={handleOfflinecoop}
-        />
+            <br />
+            <label> Local coop mode : </label> {"  "}
+            <input
+              type="checkbox"
+              name="offlinecoop"
+              defaultChecked={offlinecoop}
+              onChange={handleOfflinecoop}
+            />
 
-        <br />
-        <label>Online coop mode : </label>
-        <input
-          type="checkbox"
-          name="onlinecoop"
-          defaultChecked={onlinecoop}
-          onChange={handleOnlinecoop}
-        />
+            <br />
+            <label>Online coop mode : </label> {"  "}
+            <input
+              type="checkbox"
+              name="onlinecoop"
+              defaultChecked={onlinecoop}
+              onChange={handleOnlinecoop}
+            />
 
-        <br />
-        <label>Numbers maximum of online players : </label>
-        <input
-          type="number"
-          name="onlinemax"
-          value={onlinemax}
-          onChange={handleOnlinemax}
-        ></input>
-        <br />
-        <label>Numbers maximum of offline players : </label>
-        <input
-          type="number"
-          name="offlinemax"
-          value={offlinemax}
-          onChange={handleOfflinemax}
-        ></input>
-        <br />
-        <button type="submit">Submit</button>
-      </form>
+            <br />
+            <label>Numbers maximum of online players : </label> {"  "}
+            <input
+              type="number"
+              min="1"
+              max="99"
+              name="onlinemax"
+              value={onlinemax}
+              onChange={handleOnlinemax}
+            ></input>
+            <br />
+            <label>Numbers maximum of offline players : </label> {"  "}
+            <input
+              type="number"
+              min="1"
+              max="99"
+              name="offlinemax"
+              value={offlinemax}
+              onChange={handleOfflinemax}
+            ></input>
+            <br />
+            <button className="btn btn-primary" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
     </div>
   );
 }
