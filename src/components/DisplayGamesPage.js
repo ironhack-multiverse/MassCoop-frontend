@@ -18,21 +18,22 @@ function DisplayGamesPage() {
   useEffect(() => {
     getAllGames();
   }, []);
-
   return (
     <section className="GamesList">
+      <div className="banner">
       <h1>Games List</h1>
-      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-
-      {games &&
-        games.map((element) => (
-          <div key={element._id}>
-            <GameCard {...element.game} {...element} />
-          </div>
-        ))}
+      </div>
+      <div className="container d-flex justify-content-center">
+        <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          {games &&
+            games.map((element) => (
+              <div key={element._id}>
+                <GameCard {...element.game} {...element} />
+              </div>
+            ))}
         </div>
+      </div>
     </section>
   );
-}
-
+            }
 export default DisplayGamesPage;

@@ -60,18 +60,18 @@ function HomePage() {
       <div className='banner'>
       <div className="button-group">
         <button
-          className="btn btn-primary btn-lg mr-3"
+          className="btn btn-primary btn-lg mr-3 custom-button"
           onClick={() => handleFilterClick("local")}
         >
           Local games
         </button>
         <button
-          className="btn btn-primary btn-lg mr-3"
+          className="btn btn-primary btn-lg custom-button secondary"
           onClick={() => handleFilterClick("online")}
         >
           Online games
         </button>
-        <button className="btn btn-primary btn-lg m" onClick={handleGenerateRandomGame}>
+        <button className="btn btn-primary btn-lg custom-button tertiary m" onClick={handleGenerateRandomGame}>
           I am feeling lucky!
         </button>
       </div>

@@ -54,7 +54,7 @@ function GamesDetailsPage(props) {
           {game.game && game.game.cover && game.game.cover.url && (
             <img src={game.game.cover.url} alt="cover" />
           )}
-          <h1>Game name: {game.game.name}</h1>
+          <h2>Game name: {game.game.name}</h2>
           <p>Summary: {game.game.summary}</p>
           <p>Playable coop campaign: {game.campaigncoop ? "available" : "unavailable"}</p>
           <p>Local coop multiplayer mode: {game.offlinecoop ? "available" : "unavailable"}</p>

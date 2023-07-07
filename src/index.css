@@ -30,10 +30,11 @@ code {
 
 }
 
- @font-face {
-  font-family: 'debug_free_trialregular';
-  src: url('/public/fonts/debugfreetrial-mvdyb-webfont.woff2') format('woff2'),
-       url('/public/fonts/debugfreetrial-mvdyb-webfont.woff') format('woff');
+
+@font-face {
+  font-family: 'montserratbold';
+  src: url('/public/fonts/montserrat-bold-webfont.woff2') format('woff2'),
+       url('/public/fonts/montserrat-bold-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 
@@ -43,32 +44,34 @@ code {
 
 
 @font-face {
-  font-family: 'debug_free_trialregular';
-  src: url('/public/fonts/debugfreetrial-mvdyb-webfont.woff2') format('woff2'),
-       url('/public/fonts/debugfreetrial-mvdyb-webfont.woff') format('woff');
+  font-family: 'montserratregular';
+  src: url('/public/fonts/montserrat-regular-webfont.woff2') format('woff2'),
+       url('/public/fonts/montserrat-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 
 }
 
-@font-face {
-  font-family: 'debug_free_trialregular';
-  src: url('/public/fonts/debugfreetrial-mvdyb-webfont.woff2') format('woff2'),
-       url('/public/fonts/debugfreetrial-mvdyb-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
 
-}
+
+
 
  body {
   padding-top: 150px;
-  font-family: 'lasticaregular', sans-serif;
+  font-family: 'montserratregular', sans-serif;
   background: linear-gradient(to right, #1B3C60, #DB0084); 
  }
 
-/* .custom-nav {
-  background-color: #1F1D35; 
-} */
+h1{
+  font-family: 'lasticaregular'
+
+}
+h2 {
+
+  font-family:  'montserratbold';
+
+
+}
 
 .my-custom-card {
 
@@ -132,16 +135,17 @@ code {
 
 
 .custom-button {
-  background-color: blue;
+  background-color: #ff9ed8;
   color: white;
 }
 
 .custom-button.secondary {
-  background-color: green;
+  background-color: #ff61c0;
   color: white;
 }
 
 .custom-button.tertiary {
-  background-color: orange;
   color: white;
+  background-image: linear-gradient(to right, hotpink , rgb(255, 140, 0));
+
 }
