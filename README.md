@@ -16,8 +16,8 @@ A repository with the backend code can be found here : [https://github.com/ironh
 
 1. Clone this repository to your local machine.
 2. Navigate to the project directory: `cd masscoop-frontend`.
-3. Install the dependencies by running: `npm install`.
-4. Set up any required environment variables. 
+3. Install the dependencies by running: `npm install`, `npm install react-router-dom`, `npm install jquery`, `npm install bootstrap`, `npm install react-bootstrap`. 
+4. Set up any required environment variables (REACT_APP_SERVER_URL = http://localhost:5005)
 5. Start the development server with the following command: `npm start`.
 6. The application should now be running on your local machine. Open your web browser and visit `http://localhost:3000` to access it.
 
