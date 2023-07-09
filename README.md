@@ -1,70 +1,29 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Hello and welcome to Mass-Coop. 
 
-In the project directory, you can run:
+Hey there ! Have you ever struggled to find nice multi-player games ? First you would have to go on google, make a "quick" search on  "games I can play with friends on playstation with a coop campaign". Let's say you manage to find one after browing half an hour... Now comes the time to go on a platform to download it, but you first need to check how many players can play. Is there a offline mode ? Or just an online ? Coop or versus ? So much just to find a game. 
 
-### `npm start`
+But now you have Mass-Coop !  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+A smart multiplayer-games only library that let you browse according your preferences, which game you could play with your friends. Find easily what you are always on the hunt for !
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This repository contains the frontend code for the Mass Coop application. It is built using React. 
 
-### `npm test`
+A repository with the backend code can be found here : [https://github.com/ironhack-multiverse/MassCoop-backend]. Please refer to the backend readme for instructions on running the server.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Instructions to Run This App on Your Computer
 
-### `npm run build`
+1. Clone this repository to your local machine.
+2. Navigate to the project directory: `cd masscoop-frontend`.
+3. Install the dependencies by running: `npm install`.
+4. Set up any required environment variables. 
+5. Start the development server with the following command: `npm start`.
+6. The application should now be running on your local machine. Open your web browser and visit `http://localhost:3000` to access it.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Demo
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Link to the deployed version of the project on Netlify: [https://mass-coop.netlify.app/]
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+That's it.
+Now browse and enjoy your games with friends. Don't forget the pizzas. 
